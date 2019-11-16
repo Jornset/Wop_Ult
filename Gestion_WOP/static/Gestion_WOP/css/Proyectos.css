@@ -1,0 +1,101 @@
+#juegos{
+  text-align: center;
+}
+
+#audio{
+  text-align: center;
+}
+
+#narrativa{
+  text-align: center;
+}
+
+#titulo{
+  color: #34495e;
+  font-size: 35px;
+}
+
+#genero{
+  text-align: center;
+  font-size: 35px;
+}
+
+
+* {
+    box-sizing: border-box;
+  }
+  #wrapper {
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  
+#title {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+
+    -webkit-animation-name: bounceInDown;
+    animation-name: bounceInDown;
+  }
+
+  h1 {
+  margin: 0px 0 0 0;
+  text-align: center;
+  font-size: 30px;
+  color: #34495e;
+  }
+  
+  /**
+  * Here is the part that interest us!
+  * This part is about collapsing divs,
+  * it uses :target css3 selector as a trigger.
+  *
+  * Using the :target selector allow your users
+  * to bookmark the page with the correct section displayed!
+  * That's simply the best UX you can provide!
+  **/
+
+
+  
+
+  .collapse-title {
+    display: block;
+    margin: 0 0 10px 0;
+    padding: 10px 15px;
+  
+    background-color: #34495e;
+    color: #fff;
+  
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all .3s ease-in-out;
+    z-index: 9999;
+  }
+  .collapse-title:hover,
+  .collapse-title:focus {
+    background-color: #2c3e50;
+    outline: none;
+  }
+  
+  .collapse {
+    max-height: 0;
+    width: calc(100% - 20px);
+    margin: 10px auto;
+  
+    transform: scaleY(0);
+    transform-origin: top;
+  
+    opacity: 0;
+    text-align: justify;
+  }
+  .collapse:target {
+    max-height: inherit;
+  
+    transform: scaleY(1);
+    transition: all .3s ease-in-out;
+  
+    opacity: 1;
+  }

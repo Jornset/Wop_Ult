@@ -1,0 +1,84 @@
+{% extends 'Gestion_WOP/Base.html' %}
+
+{% block Contenido %}
+
+{% load static %}
+
+<div id="CRUD_Noticia">
+        <H1><label>Administrador de Noticias</label></H1>
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <br>
+            <label id="letra_formu">Titular</label>
+            <br>
+            <input id="form" type="text" name="Titular" placeholder="Escribe el titular" style="WIDTH: 350px; HEIGHT: 30px" required>
+            <br>
+            <label id="letra_formu">Autor</label>
+            <br>
+            <select id="form" name="Autor" required style="WIDTH: 350px; HEIGHT: 30px" >
+
+            {% for adm in Admin_Paginas %}
+
+            <option value="{{ adm.UserAdmin }}">{{ adm.UserAdmin }} -- {{ adm.AliasAdmin}}</option>
+
+            {% endfor %}
+
+            </select>
+
+            <br>
+            <label id="letra_formu"> Link de Youtube (Opcional)</label>
+            <br>
+            <input id="form" type="text" name="LinkYT" placeholder="Pega aqui tu link" style="WIDTH: 350px; HEIGHT: 30px">
+        <br>
+            <label id="letra_formu">Fecha Publicacion</label>
+        <br>
+            <input id="form" type="date" name="FechaPublicacion" required>
+        <br>
+        <label id="letra_formu">Imagen</label>
+        <br>
+        <input type="file" name="Imagen" id="form" required >
+        <br>
+        <label id="letra_formu">Cuerpo</label>
+        <br>
+        <textarea id="form" type="text" cols="50" rows="5" name="Cuerpo" placeholder="Escriba su noticia" style="WIDTH: 350px;" required></textarea>
+        <br>
+        <br> 
+            <input type="submit" value="GUARDARNOTICIA" style="WIDTH: 350px; HEIGHT: 30px">
+        </form>
+    </div> <!-- CRUD_NOTICIA -->
+
+    <br>
+
+<div id="centro">
+    <br>
+    
+    <h2 id="noticias">Noticias</h2>
+    <table>
+        <th id="linea">_________________________________________________________________________________</th>
+        <td></td>
+      {% for a in Noticiases %}
+      <tr>    
+        <td><h3>TITULAR: <h4>{{a.Titular}}</h4></h3></td>
+        <td><h3>AUTOR: <h4>{{a.Autor}}</h4></h3></td>
+        <td><h3>LINK YOUTUBE: <h4>{{a.Link_YT}}</h4></h3></td>
+        <td><h3>FECHA PUBLICACION: <h4>{{a.Fecha_noticia}}</h4></h3></td>
+        <td></td>
+        <td></td>
+        <th><img src="{{a.Imagen.url}}" width="250px" height="150"></th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><a href="{% url 'Modificar_Noticia' a.id %}">MODIFICAR</a> </td>
+        <td></td>
+        <td><a href="{% url 'Eliminar_Noticia' a.id %}">ELIMINAR</a> </td>
+      </tr>
+      {% endfor %}
+
+      <tr>
+            <th id="linea">_________________________________________________________________________________</th>
+          <td></td>
+      </tr>
+    </table>
+</div> <!-- Centro -->
+
+{% endblock Contenido %}  

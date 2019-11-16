@@ -1,0 +1,24 @@
+#noticias{
+    padding-left: 47%;
+}
+
+table {
+	font-family: arial;
+    border-collapse: collapse;
+  }
+  
+  th {
+    width: 90px;
+    padding: 5px 5px 5px 15px;
+  }
+
+  td {
+    padding: 5px 0 5px 5px;
+    font-size: 13px;
+    line-height: 1.4em;
+    display: block;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #ecdfdf;
+  }

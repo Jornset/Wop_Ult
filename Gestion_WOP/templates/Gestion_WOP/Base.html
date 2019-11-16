@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'Gestion_WOP/css/WOP_CORP_style.css' %}">
+    <link rel="stylesheet" href="{% static 'Gestion_WOP/css/tabla.css' %}">
+    <link rel="stylesheet" href="{% static 'Gestion_WOP/css/Carrusel.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'Gestion_WOP/css/Staff.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'Gestion_WOP/css/lightbox.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'Gestion_WOP/css/Proyectos.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'Gestion_WOP/css/Contacto.css' %}">
+
+    <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-de7e2ef6bfefd24b79a3f68b414b87b8db5b08439cac3f1012092b2290c719cd.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="{% static 'Gestion_WOP/js/jquery.min.js' %}"></script>
+    <script src="{% static 'Gestion_WOP/js/stopExecutionOnTimeout.js' %}"></script>
+    <script src="{% static 'Gestion_WOP/js/carrusel.js' %}"></script>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'Gestion_WOP/css/fonts.css' %}">
+    <script src="{% static 'Gestion_WOP/js/jquery-latest.js' %}"></script>
+    <script src="{% static 'Gestion_WOP/js/btn_arriba.js' %}"></script>
+
+    <title>WOP CORP</title>
+</head>
+
+<span class="ir-arriba icon-arrow-up2">▲</span>
+<div class="container2">
+<div class="container">
+
+<body id="body" background="{% static 'Gestion_WOP/img/fondo_textura.png' %}">
+  <header>
+      <img id="panel" src="{% static 'Gestion_WOP/img/panel.png' %}" width="810px" height="140px">
+      <div id="cabeza">
+          <a href="{% url 'WOP_CORP' %}"><img src="{% static 'Gestion_WOP/img/logo.png' %}" width="280px"></a>
+      </div>
+      <nav class="menu">
+          <div id="usuario">
+            {% if user.is_authenticated %}
+                <b>{{request.user.username}}</b> 
+                <a href="{% url 'Logout' %}">Cerrar Sesion</a>
+            {% else %}
+                <a href="{% url 'Login' %}" class="btn btn-success">Iniciar Session</a>
+            {% endif %} 
+          </div>
+        <ol>
+            <li><h2><a id="acceso" href="{% url 'Noticias' %}">Noticias</a></h2></li>
+            <li><h2><a id="acceso" href="{% url 'Proyectos' %}">Proyectos</a></h2></li>
+            <li><h2><a id="acceso" class="panel_contacto_2" href="{% url 'WOP_Origins' %}">Wop Origins</a></h2></li>
+            <li><h2><a id="acceso" href="{% url 'Staff' %}">Staff</a></h2></li>
+            <li><h2><a id="acceso" class="panel_contacto" href="{% url 'Contacto' %}">Contacto</a></h2></li>
+            <li><h2><a id="acceso" class="CRUD_noticias" href="{% url 'CRUD_noticias' %}">CRUD_noticias</a></h2></li>
+        </ol>
+      </nav>
+  </header>
+
+    {% block Contenido %}
+
+
+    {% endblock Contenido %}
+
+    <br>
+    <div id="Pie">
+            <div id="patreon">
+                <a href="https://www.patreon.com/WOP" target="_blank"><img src="{% static 'Gestion_WOP/img/Patreon.png' %}"  style="WIDTH: 180px" alt=""></a>
+              </div>
+              <div id="Agregados">
+                  <a><label>Product</label></a>
+                  <a><label>For Creators</label></a>
+                  <a><label>Resources</label></a>
+                  <a><label>Company</label></a>
+                </div>
+                <div id="Agregados2">
+                    <label>Product</label>
+                    <label>For Creators</label>
+                    <label>Resources</label>
+                    <label>Company</label>
+                </div>
+                <div id="Agregados3">
+                    <label>Product</label>
+                    <label>For Creators</label>
+                    <label>Resources</label>
+                    <label>Company</label>
+                </div>
+                <div id="Agregados4">
+                    <label>Product</label>
+                    <label>For Creators</label>
+                    <label>Resources</label>
+                    <label>Company</label>
+                </div>
+                <div id="Agregados5">
+                    <label>Product</label>
+                    <label>For Creators</label>
+                    <label>Resources</label>
+                    <label>Company</label>
+                </div>
+                            <!--<label id="siguenos" for="">SIGUIENOS EN NUESTRAS REDES SOCIALES</label>-->
+            <div id=Redes_Sociales>
+                <a id="facebook" href="https://www.facebook.com/WOPCorp/" target="_blank"><img  src="{% static 'Gestion_WOP/img/facebook.png' %}" width="40px"></a>
+                <a id="twitter" href="https://twitter.com/WOPCorp" target="_blank"><img  src="{% static 'Gestion_WOP/img/Twitter.png' %}" width="40px"></a>
+                <a id="instagram" href="https://www.instagram.com/wopcorp/" target="_blank"><img  src="{% static 'Gestion_WOP/img/instagram.png' %}" width="40px"></a>
+              </div>
+            </div> <!-- Pie -->
+
+
+    <div id="Final">
+    <div id="logoD">
+        <a href="{% url 'WOP_CORP' %}"><img id="logoD" src="{% static 'Gestion_WOP/img/logo.png' %}" width="155px"></a>
+    </div>
+    <div id="Copyright"></div>
+
+        <h2><label>WOPCORP.COM</label></h2>
+        <ha1><label>All Rights Reserved</label></ha1>
+        <br>
+        <ha1><label>Copyright © 2019</label></ha1>
+
+    </div> <!-- Copyright -->
+  </div> <!-- Final -->
+  </div>
+
+</body>
+</html>

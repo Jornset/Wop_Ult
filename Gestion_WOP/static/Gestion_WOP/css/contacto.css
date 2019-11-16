@@ -1,0 +1,91 @@
+#contacto{
+    background-color: rgba(128, 128, 128, 0.4)
+}
+
+#email{
+    float: left;
+    position: absolute;
+    margin-left: 200px;
+    margin-top: 300px;
+}
+
+#email_info{
+    float: left;
+    position: absolute;
+    margin-left: 110px;
+    margin-top: 460px;
+    font-size: 28px;
+}
+
+#whatsapp{
+    float: left;
+    position: absolute;
+    margin-left: 200px;
+    margin-top: 40px;
+}
+
+#whatsapp_info{
+    float: left;
+    position: absolute;
+    margin-left: 150px;
+    margin-top: 220px;
+    font-size: 35px;
+}
+
+
+#contenido_contacto{
+    background:rgba(0, 0, 0, 0.199);
+    z-index: 4;
+    height: 680px;
+    margin-top: 140px;
+}
+
+#mensaje{
+    float: right;
+    position: absolute;
+    padding-bottom: 317px;
+    padding-left: 600px;
+    font-size: 21px;
+}
+
+input {
+    font-size: 16px;
+}
+
+#letra_formu{
+    font-size: 20px;
+    
+}
+
+@media only screen and (max-width: 825px) {
+
+    #mensaje{
+        padding-left: 75px;
+        padding-top: 580px;
+    }
+
+    #ventas{
+        padding-left: 25px;
+    }
+
+    #contenido_contacto{
+        height: 1260px;
+    }
+
+    #email{
+        margin-left: 160px;
+    }
+    
+    #email_info{
+        margin-left: 70px;
+    }
+    
+    #whatsapp{
+        margin-left: 160px;
+    }
+    
+    #whatsapp_info{
+        margin-left: 115px;
+    }
+
+}

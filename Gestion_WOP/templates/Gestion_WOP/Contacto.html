@@ -1,0 +1,113 @@
+{% extends 'Gestion_WOP/Base.html' %}
+
+{% block Contenido %}
+
+{% load static %}
+
+    <br>
+
+    <div id="contenido_contacto">
+
+      <div id="contacto">
+            <img id="email" src="{% static 'Gestion_WOP/img/email.jpg' %}" width="180px" alt="">
+          <div id="email_info">
+              <br>
+              <h3><label for="">SOPORTE@WopCorp.com</label></h3>
+              <h3><label id="ventas" for=""> VENTAS@WopCorp.com</label></h3>
+              <br>
+          </div>
+          <img id="whatsapp" src="{% static 'Gestion_WOP/img/Whatsapp.png' %}" width="180px" alt="">
+          <br>
+          <div id="whatsapp_info">
+              <h3><label for="">+569 9885 7645</label></h3>
+          </div>
+    </div> <!-- contacto -->
+
+    <div id="mensaje">
+        <H1><label> Dejanos tu mensaje</label></H1>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <br>
+            <label id="letra_formu">Nombre</label>
+            <br>
+            <input id="form" type="text" name="Nombre" placeholder="Escribe tu nombre" style="WIDTH: 350px; HEIGHT: 30px" required>
+            <br>
+            <label id="letra_formu">Email</label>
+            <br>
+            <input id="form" type="email" name="Email" placeholder="Escribe tu Email" style="WIDTH: 350px; HEIGHT: 30px" required>
+            <br>
+            <label id="letra_formu">Telefono</label>
+            <br>
+            <input id="form" type="number" name="Telefono" placeholder="Escribe tu numero" style="WIDTH: 350px; HEIGHT: 30px">
+            <br>
+            <label id="letra_formu">Region</label>
+            <br>
+            <select id="form" name="Ciudad" required style="WIDTH: 350px; HEIGHT: 30px" >
+
+            {% for r in region %}
+            
+            <option value="{{ r.id }}">{{ r.NomRegion }}</option>
+
+            {% endfor %}
+
+            </select>
+
+            <br>
+            <label id="letra_formu"> Tipo de Mensaje</label>
+            <br>
+            <select id="form" name="Tipo_mensaje" required style="WIDTH: 350px; HEIGHT: 30px" >
+
+            {% for t in tipo_mensaje %}
+            
+            <option value="{{ t.id }}">{{ t.Descripcion }}</option>
+
+            {% endfor %}
+
+            </select>
+        <br>
+        <label id="letra_formu">Asunto</label>
+        <br>
+        <input id="form" type="text" name="Asunto" placeholder="Escribe un Asunto" style="WIDTH: 350px; HEIGHT: 30px" required>
+        <br>
+            <label id="letra_formu">Mensaje</label>
+            <br>
+            <textarea id="form" type="text" cols="50" rows="5" name="Mensaje" placeholder="Escriba su mensaje" style="WIDTH: 350px;" required></textarea>
+            <br>
+            <br> 
+            <input type="submit" value="Enviar Mensaje" style="WIDTH: 350px; HEIGHT: 30px">
+          </form>
+    </div> <!-- mensaje -->
+
+    </div> <!-- contenido contacto -->
+
+    <div id="Comentarios"> <!-- COMENTARIOS -->
+
+        <br>
+
+        <h2>Comentarios de la Comunidad</h2>
+
+        <br>
+
+            {% for a in Comentario %}
+        <h3>N° Comentario:</h3>
+        {{a.id}} 
+        <h3>Usuario:</h3>
+        {{a.clientees}} 
+        <br>
+        <h3>Tipo de Mensaje:</h3>
+        {{a.tmensajees}}
+        <h3>Asunto:</h3>
+        {{a.Asunto}}
+        <br>
+        <h3>Mensaje:</h3>
+        {{a.Mensaje}}
+
+        <br>
+        <br>
+
+        {% endfor %}
+
+    </div> <!-- COMENTARIOS -->
+
+
+    {% endblock Contenido %}  

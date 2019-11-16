@@ -1,0 +1,55 @@
+{% extends 'Gestion_WOP/Base.html' %}
+
+{% block Contenido %}
+
+{% load static %}
+
+<section id="slider">
+            <ul class="slider-wrapper">
+
+            {% for a in Noticiases %}
+
+            <li class="current-slide">
+            <a href="{% url 'GOLDENWATCH' %}" ><img src="{{a.Imagen.url}}" width="1200px" height="auto"></a>
+            <div class="caption">
+            <h2 class="slider-title">{{a.Titular}}</h2>
+            <p>Descubre los nuevos en el siguiente enlace</p>
+            </div>
+            </li>
+
+            {% endfor %}
+
+            </ul>
+            
+            <div class="slider-shadow"></div>
+            
+            <ul id="control-buttons" class="control-buttons"><li class=""></li><li class="active"></li><li class=""></li><li class=""></li></ul>
+            </section>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div id="centro">
+<br>
+
+        <h2 id="noticias">Noticias</h2>
+        <table>
+            <th>______________</th>
+            <td></td>
+          
+          {% for a in Noticiases %}
+          <tr>
+            <th>{{a.Fecha_noticia}}</th>
+            <td><h3><a id="new" href="{% url 'GOLDENWATCH' %}">{{a.Titular}}</a></h3></td>
+          </tr>
+          {% endfor %}
+
+          <tr>
+              <th>______________</th>
+              <td></td>
+          </tr>
+        </table>
+    </div> <!-- Centro -->
+
+{% endblock Contenido %}  

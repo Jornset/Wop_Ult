@@ -1,0 +1,45 @@
+{% extends 'Gestion_WOP/Base.html' %}
+
+{% block Contenido %}
+
+{% load static %}
+
+<div id="CRUD_Noticia">
+        <H1><label>Modificador de Noticias</label></H1>
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <input type="hidden" name="txtid" value="{{ modiNoticia.id}}">
+
+            <br>
+            <label id="letra_formu">Titular</label>
+            <br>
+            <input id="form" type="text" name="Titular" placeholder="Escribe el titular" style="WIDTH: 350px; HEIGHT: 30px" value="{{ modiNoticia.Titular}}" required>
+            <br>
+
+            <label id="letra_formu">Autor</label>
+            <br>
+            <input id="form" type="text" name="Autor" placeholder="Autor" style="WIDTH: 350px; HEIGHT: 30px" value="{{ modiNoticia.Autor}}" required>
+
+            <br>
+            <label id="letra_formu"> Link de Youtube (Opcional)</label>
+            <br>
+            <input id="form" type="text" name="LinkYT" placeholder="Pega aqui tu link" style="WIDTH: 350px; HEIGHT: 30px" value="{{ modiNoticia.Link_YT}}">
+        <br>
+            <label id="letra_formu">Fecha Publicacion</label>
+        <br>
+            <input id="form" type="date" name="FechaPublicacion" value="{{ modiNoticia.Fecha_noticia}}" required>
+        <br>
+        <label id="letra_formu">Imagen</label>
+        <br>
+        <input type="file" name="Imagen" id="form" value="{{ modiNoticia.Imagen}}" required >
+        <br>
+        <label id="letra_formu">Cuerpo</label>
+        <br>
+        <textarea id="form" type="text" cols="50" rows="5" name="Cuerpo" style="WIDTH: 350px;" value="{{ modiNoticia.Cuerpo}}" required></textarea>
+        <br>
+        <br> 
+            <input type="submit" value="MODOFICARNOTICIA" style="WIDTH: 350px; HEIGHT: 30px">
+        </form>
+    </div> <!-- CRUD_NOTICIA -->
+{% endblock Contenido %}  

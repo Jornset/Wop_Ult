@@ -1,0 +1,72 @@
+{% extends 'Gestion_WOP/Base.html' %}
+
+{% block Contenido %}
+
+{% load static %}
+
+
+  <div id="wrapper">
+    <div id="title">
+      <h1>Galeria de Proyectos</h1>
+      <h1></h1>
+      <br>
+    </div>
+  
+    <a href="#intro" class="collapse-title" id="genero">Juegos</a>
+    <div id="intro" class="collapse">
+      <div id="juegos">
+        <label id="titulo" for="">Golden Watch ~Prologue~</label>
+        <br>
+          <a href="{% url 'GOLDENWATCH' %}" target="_blank"><img src="{% static 'Gestion_WOP/img/Proyectos/GOLDEN GOLDEN.jpg' %}" border="3" style="WIDTH: 350px; HEIGHT: 150px" alt=""></a>
+          <br>
+          <label id="titulo" for="">Proyecto: "Khazel"</label>
+        <br>
+          <a href="{% url 'GOLDENWATCH' %}" target="_blank"><img src="{% static 'Gestion_WOP/img/Proyectos/Proyecto Khazel.jpg' %}" border="3" style="WIDTH: 350px; HEIGHT: 150px" alt=""></a>
+      </div>
+    </div>
+  
+    <a href="#summary" class="collapse-title" id="genero">Audio-Visual</a>
+    <div id="summary" class="collapse">
+      <div id="audio">
+        <label id="titulo" for="">Gameplays</label>
+        <br>
+          <a href="{% url 'GOLDENWATCH' %}"><img src="{% static 'Gestion_WOP/img/Proyectos/GamePlay.png' %}" border="3" style="WIDTH: 350px; HEIGHT: 150px" alt=""></a>
+          <br>
+          <label id="titulo" for="">Videoclips</label>
+          <br>
+          <a href="{% url 'GOLDENWATCH' %}"><img src="{% static 'Gestion_WOP/img/Proyectos/Salon.png' %}" border="3" style="WIDTH: 350px; HEIGHT: 150px" alt=""></a>
+          <br>
+          <label id="titulo" for="">Cortometrajes</label>
+          <br>
+          <a href="{% url 'GOLDENWATCH' %}"><img src="{% static 'Gestion_WOP/img/Proyectos/cortometrajes.jpg' %}" border="3" style="WIDTH: 350px; HEIGHT: 150px" alt=""></a>
+          <br>
+          <label id="titulo" for="">Ilustraciones</label>
+          <br>
+          <a href="{% url 'GOLDENWATCH' %}"><img src="{% static 'Gestion_WOP/img/WOP_Chibi.jpg' %}" border="3" style="WIDTH: 350px; HEIGHT: 150px" alt=""></a>
+      </div>
+    </div>
+  
+    <a href="#invoice" class="collapse-title" id="genero">Narrativa</a>
+    <div id="invoice" class="collapse">
+      <div id="narrativa">
+          <label id="titulo" for="">Mini-Historietas</label>
+          <br>
+          <a href="{% url 'GOLDENWATCH' %}"><img src="{% static 'Gestion_WOP/img/Proyectos/minihistorietas.jpg' %}" border="3" style="WIDTH: 350px; HEIGHT: 150px" alt=""></a>
+          <br>
+          <label id="titulo" for="">Historietas</label>
+          <br>
+          <a href="{% url 'GOLDENWATCH' %}"><img src="{% static 'Gestion_WOP/img/Proyectos/historietas.jpg' %}" border="3" style="WIDTH: 350px; HEIGHT: 150px" alt=""></a>
+          <br>
+          <label id="titulo" for="">Cuentos</label>
+          <br>
+          <a href="{% url 'GOLDENWATCH' %}"><img src="{% static 'Gestion_WOP/img/Proyectos/cuentos.jpg' %}" border="3" style="WIDTH: 350px; HEIGHT: 150px" alt=""></a>
+          <br>
+          <label id="titulo" for="">Novelas</label>
+          <br>
+          <a href="{% url 'GOLDENWATCH' %}"><img src="{% static 'Gestion_WOP/img/Proyectos/novelas.jpg' %}" border="3" style="WIDTH: 350px; HEIGHT: 150px" alt=""></a>
+      </div>
+    </div>
+  </div>
+  <br>
+  
+{% endblock Contenido %}  

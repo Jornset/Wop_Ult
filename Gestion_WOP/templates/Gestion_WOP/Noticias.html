@@ -1,0 +1,31 @@
+{% extends 'Gestion_WOP/Base.html' %}
+
+{% block Contenido %}
+
+{% load static %}
+
+ 
+  <br><br><br><br><br><br><br><br><br>
+  <div id="centro">
+        <br>
+        
+        <h2 id="noticias">Noticias</h2>
+        <table>
+            <th>______________</th>
+            <td></td>
+          
+          {% for a in Noticiases %}
+          <tr>
+            <th>{{a.Fecha_noticia}}</th>
+            <td><h3><a id="new" href="{% url 'GOLDENWATCH' %}">{{a.Titular}}</a></h3></td>
+          </tr>
+          {% endfor %}
+
+          <tr>
+              <th>______________</th>
+              <td></td>
+          </tr>
+        </table>
+            </div> <!-- Centro -->
+
+{% endblock Contenido %} 
